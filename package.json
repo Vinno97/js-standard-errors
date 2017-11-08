@@ -1,0 +1,23 @@
+{
+  "name": "standard-errors",
+  "version": "1.0.0",
+  "description": "Javascript errors that can be used in different projects ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Vinno97/js-standard-errors.git"
+  },
+  "keywords": [
+    "error",
+    "es6"
+  ],
+  "author": "Vinno97 (vincentbrouwers9@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Vinno97/js-standard-errors/issues"
+  },
+  "homepage": "https://github.com/Vinno97/js-standard-errors#readme"
+}
