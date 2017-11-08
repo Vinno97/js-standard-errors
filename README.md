@@ -11,10 +11,10 @@ For example, `new NotImplementedError()` results in an error with the following 
 
 ```json
 {
-  code: "ERR_NOT_IMPLEMENTED",
-  message: "Method is not implemented",
-  name: "NotImplementedError",
-  stack: "NotImplementedError: Method is not implemented
+  "code": "ERR_NOT_IMPLEMENTED",
+  "message": "Method is not implemented",
+  "name": "NotImplementedError",
+  "stack": "NotImplementedError: Method is not implemented
     at Object.<anonymous> (/path/to/your/file.js:1:1)
     at Module._compile (module.js:609:14)
     at Object.Module._extensions..js (module.js:623:10)
