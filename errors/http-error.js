@@ -10,7 +10,7 @@ class HttpError extends ExtendableError {
    * @param [options] {Object} optional extra properties
    */
   constructor(message, statusCode, options) {
-    if (!Number.isNaN(message)) {
+    if (Number.isNaN(message)) {
       options = statusCode;
       statusCode = message;
       message = http.STATUS_CODES[statusCode];
