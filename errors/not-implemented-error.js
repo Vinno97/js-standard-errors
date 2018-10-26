@@ -1,9 +1,7 @@
-const ExtendableError = require('./extendable-error');
+import ExtendableError from './extendable-error';
 
-class NotImplementedError extends ExtendableError {
+export default class NotImplementedError extends ExtendableError {
   constructor(message, options) {
     super(message || 'Method is not implemented', 'ERR_NOT_IMPLEMENTED', options);
   }
 }
-
-module.exports = NotImplementedError;

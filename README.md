@@ -38,13 +38,11 @@ For example, `new NotImplementedError()` results in an error with the following 
 The standard Javascript `Error` implementation is not that easy to extend using ES6 classes. That is why this package also exposes `ExtendableError`: an easy to extend ES6 class that wraps `Error`.
 
 ```js
-const { ExtendableError } = require('js-standard-errors');
+import { ExtendableError } from 'js-standard-errors';
 
-class CustomError extends ExtendableError {
+export default class CustomError extends ExtendableError {
   constructor(message, options) {
     super(message || 'There was an error', 'ERR_CUSTOM_ERROR', options);
   }
 }
-
-module.exports = ArgumentError;
 ```

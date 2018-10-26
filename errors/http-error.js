@@ -1,24 +1,21 @@
-const http = require('http');
-const ExtendableError = require('./extendable-error');
+import ExtendableError from './extendable-error';
+import http from 'http';
 
-class HttpError extends ExtendableError {
+/**
+ * Errors based on http status codes
+ *
+ * @class HttpError
+ * @extends {ExtendableError}
+ */
+export default class HttpError extends ExtendableError {
   /**
-   * Creates a new HttpError Object
+   * Creates a new HttpError
    *
-   * @param {String|Object} [message] An optional message to show the user when the error occurs.
    * @param {Number} statusCode The HTTP Status Code.
-   * @param [options] {Object} optional extra properties
+   * @param {String|Object} message An optional message to show the user when the error occurs.
+   * @param {...Object} rest optional extra properties
    */
-  constructor(message, statusCode, options) {
-    if (Number.isNaN(message)) {
-      options = statusCode;
-      statusCode = message;
-      message = http.STATUS_CODES[statusCode];
-    }
-    const code = http.STATUS_CODES[statusCode].toUpperCase().replace(/ /g, '_');
-
-    super(message, code, { statusCode, ...options });
+  constructor(statusCode, message = http.STATUS_CODES[statusCode], ...rest) {
+    super(message, http.STATUS_CODES[statusCode].toUpperCase().replace(/ /g, '_'), { statusCode, ...rest });
   }
 }
-
-module.exports = HttpError;

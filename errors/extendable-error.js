@@ -7,7 +7,7 @@
  *
  * @abstract
  */
-class ExtendableError extends Error {
+export default class ExtendableError extends Error {
   /**
    * Creates a new Error object
    *
@@ -61,5 +61,3 @@ class ExtendableError extends Error {
     }
   }
 }
-
-module.exports = ExtendableError;
