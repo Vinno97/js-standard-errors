@@ -15,3 +15,16 @@ test('allows all valid http codes', t => {
         });
     });
 });
+
+test('allows custom messages', t => {
+    [
+        [new HttpError(2), '2', 'INTERNAL_SERVER_ERROR'],
+        [new HttpError('2'), '2', 'INTERNAL_SERVER_ERROR'],
+        [new HttpError(404), 'Not Found', 'NOT_FOUND'],
+        [new HttpError('400'), 'Bad Request', 'BAD_REQUEST'],
+        [new HttpError('asdasdasd'), 'asdasdasd', 'INTERNAL_SERVER_ERROR']
+    ].forEach(([error, message, code]) => {
+        t.is(error.message, message);
+        t.is(error.code, code);
+    });
+});
