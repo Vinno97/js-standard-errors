@@ -1,9 +1,7 @@
-const ExtendableError = require('./extendable-error');
+import ExtendableError from './extendable-error';
 
-class ArgumentError extends ExtendableError {
+export default class ArgumentError extends ExtendableError {
   constructor(message, options) {
     super(message || 'Invalid Argument', 'ERR_INVALID_ARGUMENT', options);
   }
 }
-
-module.exports = ArgumentError;

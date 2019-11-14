@@ -1,4 +1,5 @@
-module.exports.ExtendableError = require('./errors/extendable-error');
-module.exports.NotImplementedError = require('./errors/not-implemented-error');
-module.exports.ArgumentError = require('./errors/argument-error');
-module.exports.HttpError = require('./errors/http-error');
+const _require = require('esm')(module);
+const main = _require('./main.js');
+delete main.default;
+
+module.exports = main;

@@ -1,10 +1,11 @@
 {
   "name": "standard-errors",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "description": "Javascript errors that can be used in different projects ",
   "main": "index.js",
+  "module": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,27 @@
   "bugs": {
     "url": "https://github.com/Vinno97/js-standard-errors/issues"
   },
-  "homepage": "https://github.com/Vinno97/js-standard-errors#readme"
+  "homepage": "https://github.com/Vinno97/js-standard-errors#readme",
+  "dependencies": {
+    "esm": "^3.0.84",
+    "http": "^0.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "nyc": "^13.1.0"
+  },
+  "esm": {
+    "mainFields": [
+      "module",
+      "main"
+    ]
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "files": [
+      "./test/specs/**/*.spec.js"
+    ]
+  }
 }
